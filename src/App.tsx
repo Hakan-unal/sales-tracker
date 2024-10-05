@@ -30,7 +30,7 @@ const App: React.FC = () => {
 
 
   return (<Layout >
-    {user.accessToken && <Sidebar />}
+    <Sidebar />
     <Layout>
       {
         // optional header

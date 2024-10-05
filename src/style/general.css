@@ -1,3 +1,16 @@
 .cursorPointer{
     cursor: pointer;
 }
+
+.cursorPointer:hover{
+    opacity: 0.75;
+
+}
+
+.mt-20{
+    margin-top: 10vh;
+}
+
+.ml-20{
+    margin: 2vw;
+}
