@@ -1,20 +1,22 @@
 
-import { Layout, Menu, theme } from "antd"
-import { Route, Routes, useParams, useLocation } from 'react-router-dom';
+import { Layout, theme } from "antd"
+import { Route, Routes } from 'react-router-dom';
 import Home from "./pages/home/home"
 import Login from "./pages/login/login"
+import Budget from "./pages/customer/budget"
+import Management from "./pages/customer/management"
+import Customer from "./pages/customer"
+
 import page404 from "./pages/404/404"
 import Sidebar from './components/layout/sidebar';
 import useLocalStorage from "./hooks/useLocalStorage"
 import { useEffect } from "react";
 import { navigator } from "./components/general/navigator";
-import { useNavigate, Navigate } from "react-router-dom";
-import { showNotification } from "./components/general/notification";
+import { useNavigate } from "react-router-dom";
 
 const { Content } = Layout;
 
 const App: React.FC = () => {
-  const deneme = useLocation()
   const [user, setUser] = useLocalStorage<any>("user", {})
   const navigate = useNavigate();
 
@@ -25,8 +27,6 @@ const App: React.FC = () => {
   useEffect(() => {
     if (!user.accessToken) navigator(navigate, "/login")
   }, [user])
-
-
 
 
   return (<Layout >
@@ -45,12 +45,13 @@ const App: React.FC = () => {
         }}
       >
         <Routes>
-          {/* <Route path="/" Component={Home}></Route> */}
+          <Route path="/" Component={Home}></Route> 
           <Route path="/login" Component={Login}></Route>
-
-          /* <Route path="*" Component={Home}></Route> */
+          <Route path="/customer/budget" Component={Budget}></Route>
+          <Route path="/customer/management" Component={Management}></Route>
+          <Route path="/customer" Component={Customer}></Route>
+          <Route path="*" Component={page404}></Route> 
         </Routes>
-
       </Content>
       {
         // optional header
