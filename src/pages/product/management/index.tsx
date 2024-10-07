@@ -9,8 +9,8 @@ const Sample = (props: any) => {
     key: React.Key;
     id: number;
     name: string;
-    contact: string;
-    country: string;
+    quantity: string;
+    year: string;
   }
 
   const columns: TableColumnsType<DataType> = [
@@ -19,17 +19,17 @@ const Sample = (props: any) => {
       dataIndex: "id",
     },
     {
-      title: "Name",
+      title: "Ürün Adı",
       dataIndex: "name",
     },
 
     {
-      title: "Country",
-      dataIndex: "country",
+      title: "Adet/Kilo",
+      dataIndex: "quantity",
     },
     {
-      title: "Contact",
-      dataIndex: "contact",
+      title: "Üretim Yılı",
+      dataIndex: "year",
     },
     {
       title: "Action",
@@ -50,31 +50,31 @@ const Sample = (props: any) => {
   const data: DataType[] = [
     {
       key: "1",
-      id: 11,
-      name: "A müşterisi",
-      country: "İstanbul",
-      contact: "test@test.com",
+      id: 5,
+      name: "Kablo",
+      quantity: "10",
+      year: "2024",
     },
     {
       key: "2",
-      id: 22,
+      id: 2,
       name: "B müşterisi",
-      country: "İstanbul",
-      contact: "test@test.com",
+      quantity: "İstanbul",
+      year: "2023",
     },
     {
       key: "3",
-      id: 13,
+      id: 8,
       name: "C müşterisi",
-      country: "İstanbul",
-      contact: "test@test.com",
+      quantity: "İstanbul",
+      year: "2022",
     },
     {
       key: "4",
-      id: 44,
+      id: 11,
       name: "D müşterisi",
-      country: "Ankara",
-      contact: "test@test.com",
+      quantity: "Ankara",
+      year: "2024",
     },
   ];
 
@@ -89,7 +89,7 @@ const Sample = (props: any) => {
   return (
     <Row gutter={[12, 36]}>
       <Col offset={18} span={4}>
-        <Link to="/customer/create" type="primary">
+        <Link to="/product/create" type="primary">
           <Button block>Create New</Button>
         </Link>
       </Col>

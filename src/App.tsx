@@ -3,9 +3,14 @@ import { Layout, theme } from "antd"
 import { Route, Routes } from 'react-router-dom';
 import Home from "./pages/home/home"
 import Login from "./pages/login/login"
-import Budget from "./pages/customer/budget"
-import Management from "./pages/customer/management"
-import Customer from "./pages/customer"
+import Customer from "./pages/customer/management"
+import CustomerCreate from "./pages/customer/management/customerCreate"
+import Product from "./pages/product/management"
+import ProductCreate from "./pages/product/management/productCreate"
+
+import Sales from "./pages/sales/management"
+import SalesCreate from "./pages/sales/management/salesCreate"
+
 
 import page404 from "./pages/404/404"
 import Sidebar from './components/layout/sidebar';
@@ -47,9 +52,14 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" Component={Home}></Route> 
           <Route path="/login" Component={Login}></Route>
-          <Route path="/customer/budget" Component={Budget}></Route>
-          <Route path="/customer/management" Component={Management}></Route>
           <Route path="/customer" Component={Customer}></Route>
+          <Route path="/customer/create" Component={CustomerCreate}></Route>
+          <Route path="/product" Component={Product}></Route>
+          <Route path="/product/create" Component={ProductCreate}></Route>
+          <Route path="/sales" Component={Sales}></Route>
+          <Route path="/sales/create" Component={SalesCreate}></Route>
+
+
           <Route path="*" Component={page404}></Route> 
         </Routes>
       </Content>

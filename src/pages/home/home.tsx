@@ -1,51 +1,19 @@
-import { Row, Col, Card, Image, Space, Timeline } from "antd";
-import { TbBrandVercel } from "react-icons/tb";
-import { ClockCircleOutlined } from '@ant-design/icons';
+import { Row } from "antd";
 
 const Home = (props: any) => {
-    return (<Card title="Sayfa akışı ? be tablo ? flowchart ? süreç ? ilişkiler ?">
-        <Timeline
-            mode="left"
-            items={[
-                {
-                    label: '2015-09-01',
-                    children: 'Create a services',
-                },
-                {
-                    label: '2015-09-01 09:12:11',
-                    children: 'Solve initial network problems',
-                },
-                {
-                    children: 'Technical testing',
-                },
-                {
-                    label: '2015-09-01 09:12:11',
-                    children: 'Network problems being solved',
-                },
-                {
-                    label: '2015-09-01 09:12:11',
-                    children: 'Network problems being solved',
-                    color: 'red',
-                    dot: <ClockCircleOutlined className="timeline-clock-icon" />
+    return (<Row>
+        <p>
+               Sol tarafta yer alan navigate içerisinde müşteri sekmesinde müşteri oluşturulur. oluşturulan müşteri bilgileri tabloda listelenir düzenlenebilir ve silinebilir (?) 
+               </p>
 
-                },
-                {
-                    label: '2015-09-01 09:12:11',
-                    children: 'Network problems being solved',
-                },
-                {
-                    label: '2015-09-01 09:12:11',
-                    children: 'Network problems being solved',
-                },
-                {
-                    label: '2015-09-01 09:12:11',
-                    children: 'Network problems being solved',
-                },
-            ]}
-        />
+               <p>
+               Sol tarafta yer alan navigate içerisinde ürün sekmesinde ürün oluşturulur. oluşturulan ürün bilgileri tabloda listelenir düzenlenebilir ve silinebilir (?) 
+               </p>
 
-    </Card>
-    );
+               <p>
+               Sol tarafta yer alan navigate içerisinde satış sekmesinde satış oluşturulur. Oluşturulan satış daha önceden oluşturulmuş ürün ve müşteriyle ilişkilendirelerek listelenir 
+               </p>
+    </Row>);
 };
 
 export default Home;

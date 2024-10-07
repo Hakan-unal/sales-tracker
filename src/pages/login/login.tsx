@@ -72,7 +72,7 @@ const Login = (props: any) => {
             </Form.Item>
 
             <Form.Item wrapperCol={{ offset: 10, span: 18 }}>
-              <Button block type="primary" htmlType="submit">
+              <Button className="button-radius" block type="primary" htmlType="submit">
                 Login
               </Button>
             </Form.Item>

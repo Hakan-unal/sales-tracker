@@ -11,6 +11,7 @@ import { AiOutlineLogout,AiOutlineHome } from "react-icons/ai";
 import { FaUsers } from "react-icons/fa";
 import { MdOutlineManageAccounts } from "react-icons/md";
 import { FaMoneyCheckDollar } from "react-icons/fa6";
+import { PiFactoryBold } from "react-icons/pi";
 
 const { Sider } = Layout;
 type MenuItem = Required<MenuProps>["items"][number];
@@ -47,37 +48,21 @@ const Sidebar: React.FC = (...props) => {
   };
 
   const items: MenuItem[] = [
-    getItem(<Link to="/">Anasayfa</Link>, "home", <AiOutlineHome />),
+    getItem(<Link to="/">Anasayfa</Link>, "home", <AiOutlineHome size={20} />),
 
-    getItem("Müşteri", "customer", <FaUsers />, [
+    getItem("Müşteri", "customer", <FaUsers size={20} />, [
       getItem(
-        <Link to="/customer/management">Yönetim</Link>,
-        "customer management",
-        <MdOutlineManageAccounts />
-      ),
-      getItem(
-        <Link to="/customer/budget">Cari</Link>,
-        "budget",
-        <FaMoneyCheckDollar />
-      ),
-      getItem(
-        <Link to="/customer">Sample</Link>,
-        "customer",
-        <AiOutlineHome />
+        <Link to="/customer">Yönetim</Link>,
+        "customerManagement",
+        <MdOutlineManageAccounts size={20} />
       ),
     ]),
-    getItem("Örnek ürün A", "sample", <AiOutlineHome />, [
-      getItem(<Link to="/sample">Ürün</Link>, "product", <AiOutlineHome />),
-      getItem(
-        <Link to="/sample">Satış</Link>,
-        "product sale",
-        <AiOutlineHome />
-      ),
-      getItem(
-        <Link to="/sample">Stok</Link>,
-        "product stock",
-        <AiOutlineHome />
-      ),
+    getItem("Ürün", "product", <PiFactoryBold size={20} />, [
+      getItem(<Link to="/product">Yönetim</Link>, "productManagement", <MdOutlineManageAccounts size={20} />),
+     
+    ]),
+    getItem("Satış", "sales", <FaMoneyCheckDollar />, [
+      getItem(<Link to="/sales">Yönetim</Link>, "productSales", <MdOutlineManageAccounts size={20} />),
     ]),
 
    

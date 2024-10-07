@@ -3,14 +3,17 @@ import type { TableColumnsType, TableProps } from "antd";
 import { FiTrash2 } from "react-icons/fi";
 import { BsPencil } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { MdPayments } from "react-icons/md";
 
 const Sample = (props: any) => {
   interface DataType {
     key: React.Key;
     id: number;
-    name: string;
-    contact: string;
-    country: string;
+    customerName: string;
+    productName: string;
+    quantity: string;
+    year: string;
+    price: string;
   }
 
   const columns: TableColumnsType<DataType> = [
@@ -19,17 +22,24 @@ const Sample = (props: any) => {
       dataIndex: "id",
     },
     {
-      title: "Name",
-      dataIndex: "name",
-    },
-
-    {
-      title: "Country",
-      dataIndex: "country",
+      title: "Müşteri Adı",
+      dataIndex: "customerName",
     },
     {
-      title: "Contact",
-      dataIndex: "contact",
+      title: "Ürün Adı",
+      dataIndex: "productName",
+    },
+    {
+      title: "Adet/Kilo",
+      dataIndex: "quantity",
+    },
+    {
+      title: "Satış Yılı",
+      dataIndex: "year",
+    },
+    {
+      title: "Satış Fiyatı",
+      dataIndex: "price",
     },
     {
       title: "Action",
@@ -43,6 +53,10 @@ const Sample = (props: any) => {
           <Tooltip title="Sil" color={"red"}>
             <FiTrash2 className="cursorPointer" size={16} color="red" />
           </Tooltip>
+
+          <Tooltip title="Ödeme Ekle" color={"orange"}>
+            <MdPayments className="cursorPointer" size={16} color="orange" />
+          </Tooltip>
         </Space>
       ),
     },
@@ -50,31 +64,30 @@ const Sample = (props: any) => {
   const data: DataType[] = [
     {
       key: "1",
-      id: 11,
-      name: "A müşterisi",
-      country: "İstanbul",
-      contact: "test@test.com",
+      id: 5,
+      customerName: "A Müşterisi",
+      productName: "Kablo",
+      quantity: "10",
+      year: "2024",
+      price: "2000.00",
     },
     {
-      key: "2",
-      id: 22,
-      name: "B müşterisi",
-      country: "İstanbul",
-      contact: "test@test.com",
+      key: "1",
+      id: 3,
+      customerName: "A Müşterisi",
+      productName: "Palet",
+      quantity: "100",
+      year: "2024",
+      price: "5000.00",
     },
     {
-      key: "3",
-      id: 13,
-      name: "C müşterisi",
-      country: "İstanbul",
-      contact: "test@test.com",
-    },
-    {
-      key: "4",
-      id: 44,
-      name: "D müşterisi",
-      country: "Ankara",
-      contact: "test@test.com",
+      key: "1",
+      id: 8,
+      customerName: "A Müşterisi",
+      productName: "Kable",
+      quantity: "10",
+      year: "2024",
+      price: "6000.00",
     },
   ];
 
@@ -89,7 +102,7 @@ const Sample = (props: any) => {
   return (
     <Row gutter={[12, 36]}>
       <Col offset={18} span={4}>
-        <Link to="/customer/create" type="primary">
+        <Link to="/sales/create" type="primary">
           <Button block>Create New</Button>
         </Link>
       </Col>
